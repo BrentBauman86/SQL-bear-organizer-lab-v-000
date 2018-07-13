@@ -1,7 +1,7 @@
 def selects_all_female_bears_return_name_and_age
-  "SELECT name, age FROM bears ORDER BY gender ASC LIMIT 3"
+  "SELECT name, age FROM bears WHERE gender = 'F'"
 end
-
+# ORDER BY gender ASC LIMIT 3
 def selects_all_bears_names_and_orders_in_alphabetical_order
   "SELECT name FROM bears ORDER BY name ASC"
 end
@@ -19,7 +19,7 @@ def select_youngest_bear_and_returns_name_and_age
 end
 
 def selects_most_prominent_color_and_returns_with_count
-  "SELECT MAX(color) FROM bears WHERE color LIKE "B%""
+  "SELECT MAX(color) FROM bears GROUP BY color HAVING COUNT > 2"
 end
 
 def counts_number_of_bears_with_goofy_temperaments
